@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>NFET</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+      </elementAttributes>
+      <pos x="280" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>NFET</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+      </elementAttributes>
+      <pos x="480" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>row line 1
+{{de Wortleitung 1}}</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>ADDR LINE</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="520"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Driver</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+        <entry>
+          <string>flipSelPos</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="600"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Driver</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+      </elementAttributes>
+      <pos x="540" y="600"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Write Enable
+{{de Schreibfreigabe}}</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>WRITE</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="640"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Data Input {{de Dateneingang}}</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>DATA IN</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="720"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Not</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="700"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Data Output {{de Datenausgang}}</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>DATA OUT</string>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="560"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>WL1 WL0 WE Data D
+# write both cells to one
+ 1   0  1   1   1
+ 0   1  1   1   1
+
+# check both are one
+ 1   0  0   0   1
+ 0   1  0   0   1
+
+# write cell 0 to zero
+ 1   0  1   0   0
+
+# check
+ 1   0  0   0   0
+ 0   1  0   0   1
+
+# write cell 1 to zero
+ 0   1  1   0   0
+
+# check
+ 1   0  0   0   0
+ 0   1  0   0   0
+
+# if no word line is high, output is in high Z state
+ 0   0  0   x   z
+</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="620"/>
+    </visualElement>
+    <visualElement>
+      <elementName>NFET</elementName>
+      <elementAttributes/>
+      <pos x="440" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PFET</elementName>
+      <elementAttributes/>
+      <pos x="440" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>NFET</elementName>
+      <elementAttributes>
+        <entry>
+          <string>mirror</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+      </elementAttributes>
+      <pos x="380" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PFET</elementName>
+      <elementAttributes>
+        <entry>
+          <string>mirror</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+      </elementAttributes>
+      <pos x="380" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PullDown</elementName>
+      <elementAttributes/>
+      <pos x="460" y="460"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PullDown</elementName>
+      <elementAttributes/>
+      <pos x="360" y="460"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PullUp</elementName>
+      <elementAttributes/>
+      <pos x="460" y="280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>PullUp</elementName>
+      <elementAttributes/>
+      <pos x="360" y="280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>LED</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="280"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="140" y="640"/>
+      <p2 x="400" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="560"/>
+      <p2 x="660" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="720"/>
+      <p2 x="260" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="260" y="720"/>
+      <p2 x="540" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="520"/>
+      <p2 x="320" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="520"/>
+      <p2 x="660" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="520"/>
+      <p2 x="520" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="360"/>
+      <p2 x="460" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="280" y="600"/>
+      <p2 x="400" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="600"/>
+      <p2 x="520" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="380" y="440"/>
+      <p2 x="400" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="440"/>
+      <p2 x="440" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="300"/>
+      <p2 x="440" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="380" y="300"/>
+      <p2 x="400" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="380"/>
+      <p2 x="540" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="260" y="380"/>
+      <p2 x="280" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="380"/>
+      <p2 x="480" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="380"/>
+      <p2 x="360" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="360" y="380"/>
+      <p2 x="420" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="600"/>
+      <p2 x="400" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="280"/>
+      <p2 x="400" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="360"/>
+      <p2 x="400" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="300"/>
+      <p2 x="400" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="400"/>
+      <p2 x="320" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="260" y="620"/>
+      <p2 x="260" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="260" y="700"/>
+      <p2 x="260" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="260" y="380"/>
+      <p2 x="260" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="300"/>
+      <p2 x="420" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="380"/>
+      <p2 x="420" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="360" y="340"/>
+      <p2 x="360" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="360" y="440"/>
+      <p2 x="360" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="360" y="280"/>
+      <p2 x="360" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="360" y="380"/>
+      <p2 x="360" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="400"/>
+      <p2 x="520" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="440"/>
+      <p2 x="460" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="280"/>
+      <p2 x="460" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="340"/>
+      <p2 x="460" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="360"/>
+      <p2 x="460" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="380"/>
+      <p2 x="460" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="620"/>
+      <p2 x="540" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="380"/>
+      <p2 x="540" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="560"/>
+      <p2 x="540" y="580"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
